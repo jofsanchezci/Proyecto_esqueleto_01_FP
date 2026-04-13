@@ -107,7 +107,15 @@ def duracion_promedio_peliculas(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict
         str: la duracion promedio de las peliculas en formato 'HH:MM'
     """
     #TODO: completar y remplazar la siguiente línea por el resultado correcto 
-    return ""
+    bd=[p1, p2, p3, p4, p5]
+    l_promedio=[]
+    for i in range(len(bd)):
+        l_promedio.append(bd[i]['duracion'])
+
+    promedio=sum(l_promedio)/len(l_promedio)
+    h=int(promedio//60)
+    m=int(promedio%60)
+    return (h,':',m)
 
 def encontrar_estrenos(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict, anio: int) -> str:
     """Busca entre las peliculas cuales tienen como anio de estreno una fecha estrictamente

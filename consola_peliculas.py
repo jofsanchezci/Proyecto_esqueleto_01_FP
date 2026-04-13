@@ -63,6 +63,9 @@ def ejecutar_encontrar_pelicula_mas_larga(p1: dict, p2: dict, p3: dict, p4: dict
     """
     print( mod.encontrar_pelicula_mas_larga(p1,p2,p3,p4,p5))
 
+def ejecutar_encontrar_pelicula(pelicula,p1,p2,p3,p4,p5):
+    print(mod.encontrar_pelicula(pelicula,p1,p2,p3,p4,p5))
+
 def ejecutar_consultar_duracion_promedio_peliculas(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict)->None:
     """Ejecuta la opcion de consultar la duracion promedio de las peliculas.
     Parametros:
@@ -194,8 +197,9 @@ def mostrar_menu_aplicacion(p1: dict, p2: dict, p3: dict, p4:dict, p5:dict) -> b
     print(" 3 - Consultar peliculas de estreno")
     print(" 4 - Consultar cuantas peliculas tienen clasificacion 18+")
     print(" 5 - Reagendar pelicula")
-    print(" 6 - Verificar si se puede invitar a alguien")    
-    print(" 7 - Salir de la aplicacion")
+    print(" 6 - Verificar si se puede invitar a alguien")
+    print(" 7 - Encotrar Pelicula")    
+    print(" 8 - Salir de la aplicacion")
 
     opcion_elegida = input("Ingrese la opcion que desea ejecutar: ").strip()
     
@@ -212,8 +216,11 @@ def mostrar_menu_aplicacion(p1: dict, p2: dict, p3: dict, p4:dict, p5:dict) -> b
     elif opcion_elegida == "5":
         ejecutar_reagendar_pelicula(p1, p2, p3, p4, p5) 
     elif opcion_elegida == "6":
-        ejecutar_decidir_invitar(p1, p2, p3, p4, p5) 
-    elif opcion_elegida == "7":
+        ejecutar_decidir_invitar(p1, p2, p3, p4, p5)
+    elif opcion_elegida=='7':
+        pelicula=input('Ingrese la pelicula a buscar:   ')
+        ejecutar_encontrar_pelicula(pelicula, p1,p2,p3,p4,p5)
+    elif opcion_elegida == "8":
         continuar_ejecutando = False
     else:
         print("La opcion " + opcion_elegida + " no es una opcion valida.")
